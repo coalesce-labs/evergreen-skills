@@ -1,0 +1,6 @@
+interface:
+  display_name: "Evergreen Context"
+  short_description: "Find saved resources and export focused bookmark context"
+  default_prompt: "Use $evergreen-context to find relevant saved bookmarks for this research task."
+policy:
+  allow_implicit_invocation: true

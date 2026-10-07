@@ -1,0 +1,11 @@
+# Try the skills
+
+Install the pack, then start a fresh agent conversation. These prompts should work without naming a skill. Use the repository shown in your Evergreen extension settings, not an assumed default.
+
+1. **First use:** “Do I have any bookmarks about browser extensions?” The agent should ask before one-time setup. Decline to verify that it does not clone, create configuration, or read your bookmarks. Ask again and approve the repository and location when ready. The answer should identify saved links, folder paths and the inspected commit, without editing anything.
+2. **Reuse and exact lookup:** Start a new conversation: “Have I already bookmarked `<a URL you know is saved>`?” Setup should be reused on this machine. Try a similar URL that is not saved; substring matches must not become an exact-match claim. Neither query should create a bookmark commit.
+3. **Duplicate folders:** “Check for duplicate AI Coding folders. Show me what each contains and how you would merge them, but don't make changes.” Expect a read-only comparison and a proposed union that retains unique links and order. Differently titled links and references in separate topics should remain.
+4. **Publish a small test:** “Create an Evergreen Skill Test folder with the Agent Skills specification and SQLite FTS5 documentation.” Use `https://agentskills.io/specification` and `https://www.sqlite.org/fts5.html`. Expect a preview followed by a normal commit and push of only `bookmarks.json`. Confirm both links appear in another browser or profile after its next Evergreen sync. Remove the disposable folder manually when finished; deletion is not an operation in this pack.
+5. **Context without uploads:** “Find my saved resources about browser extensions and export a local source list for my research.” Expect a private local file, bounded results and an explicit omissions count. No page content should be fetched and nothing should be uploaded to a notebook or project without a separate request.
+
+The helper currently searches bookmark titles, folder paths and URLs, not page contents or semantic embeddings. If a full phrase finds nothing, the agent should try relevant keywords or folders and explain the search scope. Stop an editing test if the preview is ambiguous or a helper refuses the repository; a refusal is not permission to bypass it.

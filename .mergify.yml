@@ -1,0 +1,16 @@
+# Strict GitHub freshness protection requires in-place, single-PR checks.
+merge_queue:
+  mode: serial
+  max_parallel_checks: 1
+
+queue_rules:
+  - name: default
+    batch_size: 1
+    max_checks_retries: 0
+    merge_method: squash
+    queue_conditions:
+      - base = main
+      - -draft
+      - check-success = Skills and bookmark safety
+      - "#review-threads-unresolved = 0"
+      - "#changes-requested-reviews-by = 0"

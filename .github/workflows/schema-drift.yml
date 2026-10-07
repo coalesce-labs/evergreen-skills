@@ -1,0 +1,35 @@
+name: Schema drift
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 12 * * 1'
+permissions:
+  contents: read
+  issues: write
+jobs:
+  drift:
+    runs-on: ${{ vars.SKILLS_RUNS_ON && (startsWith(vars.SKILLS_RUNS_ON, '[') && fromJSON(vars.SKILLS_RUNS_ON) || vars.SKILLS_RUNS_ON) || 'ubuntu-latest' }}
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+      - name: Check schema drift
+        id: drift
+        continue-on-error: true
+        run: node scripts/schema-drift.mjs
+      - name: File one actionable issue
+        if: steps.drift.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          existing=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search 'in:title "Upstream skill schema drift"' --json number --jq '.[0].number // empty')
+          body="Pinned schema drift or fetch failure detected. Review logs: https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID . Confirm vendor documentation before re-pinning; schemas are not automatically replaced."
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --repo "$GITHUB_REPOSITORY" --body "$body"
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" --title 'Upstream skill schema drift' --body "$body"
+          fi
+      - if: steps.drift.outcome == 'failure'
+        run: exit 1

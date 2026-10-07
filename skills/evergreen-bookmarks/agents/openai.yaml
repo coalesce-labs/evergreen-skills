@@ -1,0 +1,6 @@
+interface:
+  display_name: "Evergreen Bookmarks"
+  short_description: "Manage native browser bookmarks through Evergreen"
+  default_prompt: "Use $evergreen-bookmarks to inspect my sync repository and make the bookmark changes I request."
+policy:
+  allow_implicit_invocation: true

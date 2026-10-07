@@ -1,0 +1,9 @@
+{
+  "schemas": [
+    {"id":"agent-plugins","file":"agent-plugins.json","source":"official","url":"https://agent-plugins.org/schemas/1.0.0/plugin.schema.json","sha256":"0a4aad95ce337878ad38802ebf0daa3fde76abe3f65400c86bcbb1ec0b3ab883","fetched":"2026-10-06","targets":["plugin.json"]},
+    {"id":"claude-plugin","file":"claude-plugin.json","source":"community","url":"https://www.schemastore.org/claude-code-plugin-manifest.json","sha256":"b86168a7ad264150c713476e2693fa2399ad90e4f7ec29ee038644c2c950e799","fetched":"2026-10-06","targets":[".claude-plugin/plugin.json"]},
+    {"id":"claude-marketplace","file":"claude-marketplace.json","source":"community","url":"https://www.schemastore.org/claude-code-marketplace.json","sha256":"42c3f80413638e93a420256d942f409104b651379b9ac2451cc636f581de2ffc","fetched":"2026-10-06","targets":[".claude-plugin/marketplace.json"]},
+    {"id":"codex-metadata","file":"codex-metadata.json","source":"community","url":"https://www.schemastore.org/codex-skill-metadata.json","sha256":"512803fcf05ff56d00109a1e885088718a13f682bb8fb08ff3e45058040bf406","fetched":"2026-10-06","kind":"yaml","targets":["skills/*/agents/openai.yaml"]},
+    {"id":"frontmatter","file":"frontmatter.json","source":"unofficial","sha256":"5a68e31eae0569b63444100b39f06b1500a7abb34e003f733684151bb4e6ef7b","fetched":"2026-10-06","kind":"frontmatter","targets":["skills/*/SKILL.md"]}
+  ]
+}
