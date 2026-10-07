@@ -1,0 +1,4 @@
+identity: { pack: evergreen-skills, skill: evergreen-bookmarks }
+effects: [writes-files, network, publishes, deletes]
+mutating: true
+invocation: implicit

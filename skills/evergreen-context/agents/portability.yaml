@@ -1,0 +1,4 @@
+identity: { pack: evergreen-skills, skill: evergreen-context }
+effects: [writes-files, network]
+mutating: true
+invocation: implicit

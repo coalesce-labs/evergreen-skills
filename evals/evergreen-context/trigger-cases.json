@@ -1,0 +1,5 @@
+{
+  "skill": "evergreen-context",
+  "should_trigger": ["Do I have any bookmarks about software engineering automation?", "Have I already bookmarked https://example.org/guide?", "Use my saved Evergreen bookmarks as context", "Find saved bookmarks about browser extensions", "Export an Evergreen bookmark topic folder for a NotebookLM notebook", "Suggest resources missing from my saved AI research bookmarks", "Prepare a local bookmark source list for my ChatGPT project"],
+  "should_not_trigger": ["Merge these duplicate Evergreen folders", "Rename my browser bookmark", "Add these paper references to my bookmark repo and push", "Fix the extension's options page", "Search the web about a topic without using my bookmarks"]
+}

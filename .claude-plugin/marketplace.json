@@ -1,0 +1,15 @@
+{
+  "name": "evergreen-skills",
+  "owner": {
+    "name": "Coalesce Labs"
+  },
+  "description": "Evergreen bookmark management and research skills.",
+  "plugins": [
+    {
+      "name": "evergreen-skills",
+      "source": "./",
+      "description": "Manage and use your Evergreen bookmarks from an AI agent.",
+      "version": "0.1.0"
+    }
+  ]
+}

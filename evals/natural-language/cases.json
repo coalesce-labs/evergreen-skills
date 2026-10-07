@@ -1,0 +1,28 @@
+{
+  "cases": [
+    {"id":"have-topic","prompt":"Do I have any bookmarks about software engineering automation?","expected":["evergreen-context"]},
+    {"id":"saved-topic","prompt":"Find my saved links about browser extensions.","expected":["evergreen-context"]},
+    {"id":"remember-page","prompt":"I bookmarked something about building agents. Can you help me find it?","expected":["evergreen-context"]},
+    {"id":"have-url","prompt":"Have I already bookmarked https://example.org/guide?","expected":["evergreen-context"]},
+    {"id":"research-context","prompt":"I'm writing a research paper about developer tools. Use my bookmarks to find useful references.","expected":["evergreen-context"]},
+    {"id":"saved-category","prompt":"Which of my bookmarks might help with automating code reviews?","expected":["evergreen-context"]},
+    {"id":"export-topic","prompt":"Make a local source list from my browser-extension bookmarks for a notebook.","expected":["evergreen-context"]},
+    {"id":"suggest-gaps","prompt":"What useful resources am I missing from my AI tooling bookmarks? Show suggestions before saving anything.","expected":["evergreen-context"]},
+    {"id":"duplicate-report","prompt":"Are any of my bookmark folders duplicated? Don't change anything yet.","expected":["evergreen-bookmarks"]},
+    {"id":"merge-folders","prompt":"Merge the two AI Coding bookmark folders without losing anything.","expected":["evergreen-bookmarks"]},
+    {"id":"rename-folder","prompt":"Rename my bookmark folder Dev Stuff to Engineering.","expected":["evergreen-bookmarks"]},
+    {"id":"save-references","prompt":"Save all the references from this paper into my bookmarks, organized by section.","expected":["evergreen-bookmarks"]},
+    {"id":"freshness","prompt":"Is my Evergreen bookmarks repo up to date?","expected":["evergreen-bookmarks"]},
+    {"id":"reorganize","prompt":"Help reorganize my bookmarks into fewer folders. Show a proposal first.","expected":["evergreen-bookmarks"]},
+    {"id":"add-links","prompt":"Add these three links to my Research bookmarks and sync them to my browsers.","expected":["evergreen-bookmarks"]},
+    {"id":"read-then-save","prompt":"Find my saved resources about testing, then add the new references we discussed to my bookmarks.","expected":["evergreen-context","evergreen-bookmarks"]},
+    {"id":"web-search","prompt":"Search the web for articles about software engineering automation.","expected":[]},
+    {"id":"explain-sync","prompt":"Explain how cross-browser bookmark synchronization works.","expected":[]},
+    {"id":"extension-code","prompt":"Fix the Evergreen extension's background service worker.","expected":[]},
+    {"id":"generic-notebook","prompt":"Put this uploaded PDF into my research notebook.","expected":[]},
+    {"id":"browser-install","prompt":"How do I install a Firefox bookmark extension?","expected":[]},
+    {"id":"unqualified-recommendation","prompt":"Recommend software engineering automation tools.","expected":[]},
+    {"id":"git-source","prompt":"Update my application source checkout to the latest main branch.","expected":[]},
+    {"id":"browser-bug","prompt":"My browser isn't showing its bookmarks bar. Help me troubleshoot.","expected":[]}
+  ]
+}

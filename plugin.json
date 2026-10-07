@@ -1,0 +1,16 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "evergreen-skills",
+  "version": "0.1.0",
+  "description": "Manage and use your Evergreen bookmarks from an AI agent.",
+  "author": {
+    "name": "Coalesce Labs"
+  },
+  "repository": "https://github.com/coalesce-labs/evergreen-skills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "bookmarks",
+    "evergreen"
+  ]
+}

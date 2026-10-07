@@ -1,0 +1,11 @@
+{
+  "name": "evergreen-skills",
+  "version": "0.1.0",
+  "description": "Manage and use your Evergreen bookmarks from an AI agent.",
+  "author": {"name": "Coalesce Labs"},
+  "repository": "https://github.com/coalesce-labs/evergreen-skills",
+  "license": "MIT",
+  "keywords": ["agent-skills", "bookmarks", "evergreen"],
+  "marketplace": {"name": "evergreen-skills", "owner": {"name": "Coalesce Labs"}, "description": "Evergreen bookmark management and research skills."},
+  "emit": ["claude-plugin", "agent-plugins", "readme"]
+}

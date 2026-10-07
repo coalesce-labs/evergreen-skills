@@ -1,0 +1,5 @@
+{
+  "skill": "evergreen-bookmarks",
+  "should_trigger": ["Check my Evergreen bookmarks are current", "Merge duplicate bookmark folders and keep their contents", "Rename my saved bookmark folder", "Save this paper's references in my Evergreen bookmarks by section", "Reorganize my browser bookmarks into topics"],
+  "should_not_trigger": ["Find my saved resources as context for a research task", "Export bookmarks for NotebookLM without changing them", "Fix Evergreen's background service worker", "Review this GitHub PR", "Explain browser bookmark sync algorithms"]
+}
