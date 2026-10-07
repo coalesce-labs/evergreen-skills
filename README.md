@@ -21,21 +21,66 @@ and [Firefox Add-ons](https://addons.mozilla.org/addon/evergreen-bookmarks/).
 
 ## Install
 
-Install these folders with an Agent Skills-compatible installer, for example:
+Choose **one route below**. They provide the same two skills; these are alternatives, not
+consecutive setup steps. For multiple tools on one machine, start with Option A.
+
+### Option A — Standalone skills (recommended)
+
+Use the [skills installer](https://github.com/vercel-labs/skills) and select your agent in its prompts:
 
 ```sh
 npx skills add coalesce-labs/evergreen-skills --skill '*' -g
 ```
 
-Choose your agent in the installer. Alternatively install as a Claude Code plugin:
+`-g` installs for your user account; omit it for a project-only installation. Select the supported
+tools you use, such as Codex, Claude Code or Gemini CLI. Don't also install the pack as a plugin.
+
+**Verification:** isolated project installs for Codex and Claude Code were tested from this public
+repository. Global installs and the other tools have not been tested end to end.
+
+### OR Option B — Native plugin (Codex or Claude Code)
+
+Choose the commands for your tool, instead of Option A.
+
+**Codex CLI:**
+
+```sh
+codex plugin marketplace add coalesce-labs/evergreen-skills
+codex plugin add evergreen-skills@evergreen-skills
+```
+
+This uses the marketplace/plugin support in current Codex CLI releases. If your CLI has no
+`plugin` command, use Option A. See [OpenAI's plugin documentation](https://developers.openai.com/plugins/build/plugins).
+
+**Claude Code:** run these slash commands inside Claude Code:
 
 ```text
 /plugin marketplace add coalesce-labs/evergreen-skills
 /plugin install evergreen-skills@evergreen-skills
 ```
 
-Use one installation method per machine to avoid duplicate skills. Each skill is self-contained;
-its scripts need **Node 22+ and Git**, and authenticated **GitHub CLI** for discovery and cloning.
+**Verification:** the manifests are validated in CI and the Codex command syntax was checked against
+the installed CLI. Native plugin installation has not been tested end to end in either tool.
+
+### OR Option C — Gemini CLI's skills installer
+
+Inside a terminal, use Gemini's [native skills installer](https://geminicli.com/docs/cli/using-agent-skills/):
+
+```sh
+gemini skills install https://github.com/coalesce-labs/evergreen-skills --path skills
+```
+
+`--path skills` selects the directory containing both skills. Then run `/skills list` inside Gemini
+CLI to check discovery. This installs **skills**, not a Gemini
+extension: this repository does not include a `gemini-extension.json`. Use this instead of Option A,
+not in addition to it.
+
+**Verification:** this route follows Gemini CLI's documentation; it has not been tested end to end.
+
+### Requirements for every route
+
+Before switching routes, remove the previous installation to avoid duplicate skills. Each skill
+is self-contained; its scripts need **Node 22+ and Git**, and authenticated **GitHub CLI** for discovery and cloning.
 No runtime npm install, database, API key in a prompt, or extension-source checkout is needed.
 
 ## Choose your bookmarks repository
