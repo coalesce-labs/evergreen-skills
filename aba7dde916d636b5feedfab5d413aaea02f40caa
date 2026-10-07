@@ -1,1 +1,6 @@
-Fix Gemini install discovery for the nested skills directory after independent review
+Revision history for #2:
+
+rev 2 (content) 2026-10-07 21:54 UTC — Fix Gemini install discovery for the nested skills directory after independent review
+rev 1 (initial) 2026-10-07 21:54 UTC
+
+<!-- mergify-revision-data: {"schema_version":1,"pull_number":2,"entries":[{"number":1,"change_type":"initial","old_sha":null,"new_sha":"9bf5c8b56174db1dad96a3bf2895aa2377d04815","timestamp_iso":"2026-10-07T21:54:22Z","reason":"","replay_sha":null,"compare_url":null},{"number":2,"change_type":"content","old_sha":"9bf5c8b56174db1dad96a3bf2895aa2377d04815","new_sha":"aba7dde916d636b5feedfab5d413aaea02f40caa","timestamp_iso":"2026-10-07T21:54:22Z","reason":"Fix Gemini install discovery for the nested skills directory after independent review","replay_sha":null,"compare_url":"https://github.com/coalesce-labs/evergreen-skills/compare/9bf5c8b56174db1dad96a3bf2895aa2377d04815...aba7dde916d636b5feedfab5d413aaea02f40caa"}]} -->
